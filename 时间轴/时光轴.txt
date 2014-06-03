@@ -1,0 +1,56 @@
+1.z-index
+越大越属于外层
+
+repeat-y：在y轴重复
+
+2.CSS三角形原理
+#triangle-2 把除了右边红色，其他的颜色全部透明:
+    <style>
+        #triangle-2{
+
+            width:0;height:0;
+
+            border-color: transparent red transparent transparent;
+            border-width: 10px 10px 10px 5px;
+            border-style: solid solid solid solid;
+        }
+    </style>
+    <div id="triangle-1"></div>
+
+2.CSS三角形-每个角都有颜色
+#triangle-1 四个边框都有颜色的代码:
+    <style>
+        #triangle-1{
+            width:0;height:0;   //  排除元素本身的大小影响，这样增加的边框会互相挤起来
+            border-color: blue red green black;  //  四个边框的颜色。 上，右，下，左；
+            border-width: 10px 10px 10px 10px;     //  四个方向的边框粗细，上下构成了 整体的高，左右构成了整体的宽。
+                                                //  因为左边需要显示的是箭头，所以左边为0
+            border-style: dashed solid dashed dashed;   //  只要不为 none  就可，这里为了便于查看，突出了右边
+        }
+    </style>
+    <div id="triangle-1"></div>
+
+4.unshift
+push [1] -> [1,2] -> [1,2,3]
+unshift [1] -> [2,1] -> [3,2,1]
+达到最新日期最上
+
+5.创建获取对象和innerHTML的通用函数
+var g = function (id) {
+    return document.getElementById(id);
+}
+
+var g_tpl = function (id) {
+    return g( 'tpl_' + id ).innerHTML;
+}
+
+6.数据的格式化
+用二维数组的方式将键值匹配
+并创建数组对象插入具体信息
+
+
+
+7.生成时序  HTML
+利用获取的innerHTML的正则替代
+影藏的div提供格式化的插入
+join('')防止','的出现
